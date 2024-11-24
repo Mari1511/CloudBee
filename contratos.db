@@ -1,0 +1,5 @@
+CREATE TABLE contratos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    filename TEXT NOT NULL,
+    filepath TEXT NOT NULL
+);

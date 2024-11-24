@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contratos - Azal</title>
+    <link rel="stylesheet" href="contratos.css">
+</head>
+<body>
+    <header>
+        <h1>AZAL</h1>
+        <nav>
+            <a href="../inicio/home.html">Inicio</a>
+            <a href="../productos/productos.html">Productos</a>
+            <a href="../licitaciones/licitaciones.html">Licitaciones</a>
+            <input type="text" placeholder="Buscar..." class="search-bar" id="searchInput">
+        </nav>
+    </header>
+    <main>
+        <h2>Lista de Contratos</h2>
+        <div id="contractFolders">
+            <!-- Carpetas de contratos generadas -->
+        </div>
+        <div id="fileList">
+            <!-- Aquí se muestran los archivos subidos -->
+        </div>
+    </main>
+    <!-- Subir archivo -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeUploadModal()">&times;</span>
+            <h3>Subir Archivos PDF</h3>
+            <input type="file" accept="application/pdf" id="pdfUploader" multiple>
+            <button onclick="openFiles()">Abrir PDFs</button>
+        </div>
+    </div>
+    <!-- Abrir archivo -->
+    <div id="openModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3>Abrir Archivo PDF</h3>
+            <p>¿Deseas abrir el archivo en una nueva pestaña?</p>
+            <button id="openButton">Abrir PDF</button>
+        </div>
+    </div>
+    <script src="contratos.js"></script>
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            // Filtrar contratos
+            const contractFolders = document.querySelectorAll('.folder');
+            contractFolders.forEach(folder => {
+                const folderName = folder.textContent.toLowerCase();
+                folder.style.display = folderName.includes(query) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

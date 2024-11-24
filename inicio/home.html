@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <header>
+        <h1>AZAL</h1>
+        <nav>
+            <ul>
+                <li><a href="../inicio/home.html">Inicio</a></li>
+                <li><a href="../productos/productos.html">Productos</a></li>
+                <li><a href="../licitaciones/licitaciones.html">Licitaciones</a></li>
+                <li><a href="../contratos/contratos.html">Contratos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <h2>Bienvenido ¿Qué le gustaría buscar?</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar..." id="searchInput">
+                <button id="clearButton">✖</button>
+            </div>
+        </div>
+        <!-- Contenedor para mostrar los resultados de búsqueda -->
+        <div id="searchResults"></div>
+    </main>
+    <script src="home.js"></script>
+</body>
+</html>

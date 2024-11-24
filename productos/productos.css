@@ -1,0 +1,131 @@
+/* Estilos */
+body {
+    background-color: #1a0b2e;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Encabezado */
+header {
+    background: linear-gradient(90deg, #673ab7, #512da8);
+    padding: 10px 40px; /* Reducir la altura ajustando el padding */
+    display: flex;
+    justify-content: space-between; /* Mantener el logo a la izquierda y el nav a la derecha */
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+header h1 {
+    color: #ffffff;
+    font-size: 2.5rem; /* Tamaño de letra del logo */
+    margin-right: 700px; /* Espacio entre el logo y el nav */
+}
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-start; /* Mantener alineación a la izquierda */
+    gap: 20px;
+    margin-left: 40px; /* Ajustar este valor para mover el nav hacia la derecha */
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+nav a:hover {
+    color: #b19cd9;
+}
+/* Barra de búsqueda */
+.search-bar {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.2rem;
+    flex-basis: 200px;
+    margin-left: 20px;
+    transition: width 0.3s ease;
+}
+.search-bar::placeholder {
+    color: #b19cd9;
+}
+/* Ajustes de responsividad */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 20px;
+    }
+    .search-bar {
+        flex-basis: 150px;
+    }
+}
+main {
+    padding-top: 120px; /* Ajuste de espacio superior para el encabezado */
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+/* Subtítulos de categoría con sombra y margen inferior */
+.category-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #b19cd9;
+    margin-top: 30px;
+    margin-bottom: 20px; /* Espacio agregado entre el subtítulo y los productos */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0,  0, 0, 0.5);
+}
+/* Estilos para cada producto */
+.product-item {
+    background: rgba(103, 58, 183, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    margin: 20px;
+    padding: 20px;
+    width: 250px;
+    height: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.product-item:hover {
+    transform: translateY(-5px);
+}
+.product-item img {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    filter: opacity(0.9) drop-shadow(0 0 5px rgba(103, 58, 183, 0.4)) brightness(0.8);
+}
+.product-item p {
+    color: #b19cd9;
+    font-size: 1rem;
+}
+/* Estilos del título de la lista de productos */
+main h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #b19cd9;
+    margin-top: 40px;
+    margin-bottom: 20px; /* Espacio entre "Lista de Productos" y el contenido */
+}

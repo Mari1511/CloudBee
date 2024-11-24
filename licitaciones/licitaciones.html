@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licitaciones - Azal</title>
+    <link rel="stylesheet" href="licitaciones.css">
+</head>
+<body>
+    <header>
+        <h1>AZAL</h1>
+        <nav>
+            <a href="../inicio/home.html">Inicio</a>
+            <a href="../productos/productos.html">Productos</a>
+            <a href="../contratos/contratos.html">Contratos</a>
+            <input type="text" placeholder="Buscar..." class="search-bar" id="searchInput">
+        </nav>
+    </header>
+    <main>
+        <h2>Lista de Licitaciones</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Convocatoria</th>
+                    <th>Fichas Técnicas</th>
+                    <th>Carpeta de Entrega</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="file" accept="application/pdf" id="convocatoriaUploader" multiple>
+                        <button onclick="uploadFiles('convocatoria')">Subir</button>
+                        <div id="convocatoriaFiles"></div>
+                    </td>
+                    <td>
+                        <input type="file" accept="application/pdf" id="fichasUploader" multiple>
+                        <button onclick="uploadFiles('fichas')">Subir</button>
+                        <div id="fichasFiles"></div>
+                    </td>
+                    <td>
+                        <input type="file" accept="application/pdf" id="carpetaUploader" multiple>
+                        <button onclick="uploadFiles('carpeta')">Subir</button>
+                        <div id="carpetaFiles"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <script src="licitaciones.js"></script>
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            // Filtrar contratos
+            const contractFolders = document.querySelectorAll('.folder');
+            contractFolders.forEach(folder => {
+                const folderName = folder.textContent.toLowerCase();
+                folder.style.display = folderName.includes(query ) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
